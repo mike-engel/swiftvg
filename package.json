@@ -1,0 +1,26 @@
+{
+  "name": "svg-to-swift",
+  "version": "0.1.0",
+  "description": "Convert SVG path data to swift 3 syntax",
+  "main": "index.js",
+  "bin": "./bin/cmd.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "keywords": [
+    "swift",
+    "svg",
+    "path",
+    "bezier",
+    "curve"
+  ],
+  "author": "Mike Engel <mike@mike-engel.com>",
+  "license": "MIT",
+  "dependencies": {
+    "parse-svg-path": "^0.1.2",
+    "ramda": "^0.23.0"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0"
+  }
+}
