@@ -10,7 +10,7 @@ if (process.argv.length > 3) {
   process.exit(1)
 }
 
-if (process.argv.length < 3) {
+if (process.argv.length < 3 || process.argv[2] === '-h' || process.argv[2] === '--help') {
   console.info(`Usage: swift-to-svg
 
   swift-to-svg <path data>`)
