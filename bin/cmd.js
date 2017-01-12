@@ -20,6 +20,6 @@ if (process.argv.length < 3) {
 
 const code = parser(pathData)
 
-console.log(code)
+console.log(code.join('\n'))
 
 process.exit(0)

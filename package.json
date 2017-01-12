@@ -4,15 +4,22 @@
   "description": "Convert SVG path data to swift 3 syntax",
   "main": "index.js",
   "bin": "./bin/cmd.js",
+  "engines": {
+    "node": ">= 4.0.0"
+  },
   "scripts": {
-    "test": "standard"
+    "test": "npm run test:coverage && npm run test:lint",
+    "test:coverage": "nyc npm run test:unit",
+    "test:lint": "standard",
+    "test:unit": "mocha test.js"
   },
   "keywords": [
     "swift",
     "svg",
     "path",
     "bezier",
-    "curve"
+    "curve",
+    "arc"
   ],
   "author": "Mike Engel <mike@mike-engel.com>",
   "license": "MIT",
@@ -21,6 +28,15 @@
     "ramda": "^0.23.0"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.0.0",
     "standard": "^8.6.0"
+  },
+  "standard": {
+    "globals": [
+      "describe",
+      "it"
+    ]
   }
 }
