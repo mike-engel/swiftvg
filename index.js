@@ -14,7 +14,6 @@ const {
   pipe,
   prepend,
   prop,
-  slice,
   when
 } = require('ramda')
 const parse = require('parse-svg-path')
@@ -32,7 +31,7 @@ const initialState = { x: 0, y: 0 }
 // state :: State
 let state = Object.assign({}, initialState)
 
-// reducer :: Object -> String -> Object -> Object
+// reducer :: State -> String -> Object -> State
 const reducer = curry((a, b, c) => {
   switch (b) {
     case SET_RELATIVE:
@@ -62,7 +61,7 @@ const roundFloat = (a) => {
   return Number(a * 100).toFixed() / 100
 }
 
-// convertXY :: Array -> Object
+// convertXY :: Array (Number | String) -> Object
 const convertXY = (a) => {
   const x = Number(nth(0, a))
   const y = Number(nth(1, a))
@@ -70,7 +69,7 @@ const convertXY = (a) => {
   return { x, y }
 }
 
-// convertCCXY :: Array -> Object
+// convertCCXY :: Array (Number | String) -> Object
 const convertCCXY = (a) => {
   const x = Number(nth(4, a))
   const y = Number(nth(5, a))
@@ -82,7 +81,7 @@ const convertCCXY = (a) => {
   return { x, y, cp1x, cp1y, cp2x, cp2y }
 }
 
-// convertQCXY :: Array -> Object
+// convertQCXY :: Array (Number | String) -> Object
 const convertQCXY = (a) => {
   const x = Number(nth(2, a))
   const y = Number(nth(3, a))
@@ -92,7 +91,7 @@ const convertQCXY = (a) => {
   return { x, y, cpx, cpy }
 }
 
-// convertArcXY :: Array -> Object
+// convertArcXY :: Array (Number | String) -> Object
 const convertArcXY = (a) => {
   const x = Number(nth(5, a))
   const y = Number(nth(6, a))
@@ -152,7 +151,7 @@ const convertArc = (a) => {
   return `shape.addArc(withCenter: ${anchor}, radius: ${radius}, startAngle: ${startAngle}, endAngle: ${endAngle}, clockwise: ${clockwise})`
 }
 
-// processPathData :: Array -> String
+// processPathData :: Array (Array (Number | String)) -> String
 const processPathData = (a) => {
   switch (head(a)) {
     case 'v':
@@ -186,11 +185,12 @@ const processPathData = (a) => {
   }
 }
 
-// convertPoints :: Array -> Array
+// convertPoints :: Array (Array (Number | String)) -> Array String
 const convertPoints = (a) => {
   return a.map(processPathData)
 }
 
+// svgToSwift :: String -> Array String
 module.exports = (pathData) => {
   return pipe(parse, convertPoints, prepend(beginShape()))(pathData)
 }
