@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build:browser": "browserify index.js -s svgToSwift | uglifyjs -c > bundle.js ",
+    "build:site": "browserify site/main.js -s svgToSwift | uglifyjs -c > site/bundle.js ",
     "test": "npm run test:coverage && npm run test:lint",
     "test:coverage": "nyc npm run test:unit",
     "test:lint": "standard",
@@ -37,6 +38,9 @@
     "uglify-js": "github:mishoo/UglifyJS2#harmony"
   },
   "standard": {
+    "ignore": [
+      "bundle.js"
+    ],
     "globals": [
       "describe",
       "it"

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="svg-to-swift — Convert SVG path data to swift 3 syntax">
+  <title>svg-to-swift &ndash; Convert SVG path data to swift 3 syntax</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    body {
+      background-color: #dddaf5;
+      color: #3e5a7f;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    main {
+      margin: 0 auto;
+      max-width: 40em;
+      width: 90%;
+    }
+
+    code {
+      background-color: #fff;
+      border-radius: 3px;
+      font-weight: 600;
+      padding: 2px 5px;
+    }
+
+    a {
+      color: #3e5a7f;
+    }
+
+    a:hover,
+    a:active {
+      color: #3e5a7f;
+    }
+
+    h1 {
+      font-size: 2.369rem;
+    }
+
+    h2 {
+      font-size: 1.777rem;
+    }
+
+    h3 {
+      font-size: 1.333rem;
+    }
+
+    h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    footer {
+      font-size: 0.75rem;
+      margin: 0.5em 0;
+    }
+
+    .input,
+    .output {
+      border: 1px solid #3e5a7f;
+      border-radius: 3px;
+      color: #3e5a7f;
+      display: block;
+      font-family: monospace;
+      font-size: 1rem;
+      height: 50vh;
+      max-height: 300px;
+      padding: 0.5em;
+      width: 100%;
+    }
+
+    .output {
+      overflow: scroll;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>svg-to-swift</h1>
+    <h2>Convert SVG path data to swift 3 syntax</h2>
+    <p>In the age of disparate devices and device resolutions, vector graphics have become all too important. If you're an iOS developer, why waste your time managing a million image assets to account for different pixel densities and states? You shouldn&rsquo;t!</p>
+    <p><code>svg-to-swift</code> is a small little tool written in javascript to help you convert your vector SVG images into <code>UIBezierPath</code> shapes. Simple paste the string inside the <code>d</code> attribute and vóila, your <code>UIBezierPath</code> code is generated for you.</p>
+    <textarea class="input" data-hook="input" placeholder="Your `d` attribute string goes here."></textarea>
+    <pre class="output" data-hook="output">&nbsp;</pre>
+    <footer>
+      <span>&copy; 2017 Mike Engel</span>
+      <span><a href="https://github.com/mike-engel/svg-to-swift/tree/master/LICENSE.md" target="_blank">MIT</a></span>
+    </footer>
+  </main>
+  <script src="site/bundle.js"></script>
+</body>
+</html>
