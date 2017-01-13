@@ -1,21 +1,19 @@
-const {
-  always,
-  append,
-  converge,
-  curry,
-  drop,
-  equals,
-  head,
-  identity,
-  isNil,
-  merge,
-  nth,
-  pair,
-  pipe,
-  prepend,
-  prop,
-  when
-} = require('ramda')
+const always = require('ramda/src/always')
+const append = require('ramda/src/append')
+const converge = require('ramda/src/converge')
+const curry = require('ramda/src/curry')
+const drop = require('ramda/src/drop')
+const equals = require('ramda/src/equals')
+const head = require('ramda/src/head')
+const identity = require('ramda/src/identity')
+const isNil = require('ramda/src/isNil')
+const merge = require('ramda/src/merge')
+const nth = require('ramda/src/nth')
+const pair = require('ramda/src/pair')
+const pipe = require('ramda/src/pipe')
+const prepend = require('ramda/src/prepend')
+const prop = require('ramda/src/prop')
+const when = require('ramda/src/when')
 const parse = require('parse-svg-path')
 
 // SET_ABSOLUTE :: String

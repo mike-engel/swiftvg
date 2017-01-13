@@ -8,6 +8,7 @@
     "node": ">= 4.0.0"
   },
   "scripts": {
+    "build:browser": "browserify index.js -s svgToSwift | uglifyjs -c > bundle.js ",
     "test": "npm run test:coverage && npm run test:lint",
     "test:coverage": "nyc npm run test:unit",
     "test:lint": "standard",
@@ -28,10 +29,12 @@
     "ramda": "^0.23.0"
   },
   "devDependencies": {
+    "browserify": "^13.3.0",
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "nyc": "^10.0.0",
-    "standard": "^8.6.0"
+    "standard": "^8.6.0",
+    "uglify-js": "github:mishoo/UglifyJS2#harmony"
   },
   "standard": {
     "globals": [
