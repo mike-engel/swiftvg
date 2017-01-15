@@ -4,6 +4,7 @@
 
 [![Build Status](https://travis-ci.org/mike-engel/swiftvg.svg?branch=master)](https://travis-ci.org/mike-engel/swiftvg)
 [![npm](https://img.shields.io/npm/l/swiftvg.svg)](https://npmjs.com/package/swiftvg)
+[![codecov](https://codecov.io/gh/mike-engel/swiftvg/branch/master/graph/badge.svg)](https://codecov.io/gh/mike-engel/swiftvg)
 
 # Why?
 
