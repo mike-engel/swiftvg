@@ -1,6 +1,12 @@
 # svgswift
 
-> A small tool to help you convert your SVG code into Swift code
+> Convert SVG path data to a Swift 3 UIBezierPath
+
+# Why?
+
+As an iOS developer, you have to support at least three different pixel densities. Why waste your time managing a million image assets for different resolutions and states?
+
+`svgswift` is a small little tool written in javascript to help you convert your vector SVG images into `UIBezierPath` shapes. Simply paste the string from the `d` attribute and vóila, your `UIBezierPath` code is generated for you.
 
 # Installing
 
@@ -10,7 +16,7 @@ There are two ways to use `svgswift`: through the CLI or through your code.
 
 To install the tool, use npm (or another npm package manager like yarn). It's
 recommended that you install it globally, have `node_modules/.bin` in your
-path, or will use it with an npm `run-script`.
+path, or use it with an npm `run-script`.
 
 ```sh
 npm install -g svgswift
@@ -35,7 +41,13 @@ Unless something went wrong, the command should exit with a 0 status and print
 the swift code line by line to your terminal's STDOUT.
 
 ```sh
-svgswift "M37,17 L37,17 Z"
+svgswift "M37,17 L37,25 Z"
+
+# output
+let shape = UIBezierPath()
+shape.move(to: CGPoint(x: 37, y: 17))
+shape.addLine(to: CGPoint(x: 37, y: 25))
+shape.close()
 ```
 
 ## JS API
@@ -54,7 +66,7 @@ const svgToSwift = require('svgswift')
 // ES2015
 import svgToSwift from 'svgswift'
 
-const pathData = 'M37,17 L37,17 Z'
+const pathData = 'M37,17 L37,25 Z'
 
 svgToSwift(pathData) // Array<String>
 ```
@@ -71,10 +83,12 @@ affects, mutations, and imperative code when you can.
 There are four testing commands:
 
 ```
-npm run test - run all tests
+npm run build:browser – build a UMD file for a browser to consume
+npm run build:site – build the JS bundle for the public site
+npm run test – run all tests
 npm run test:coverage - get a coverage report
-npm run test:lint - lint the project using standard
-npm run test:unit - run only unit tests with no coverage or linting
+npm run test:lint – lint the project using standard
+npm run test:unit – run only unit tests with no coverage or linting
 ```
 
 # [Code of Conduct](#CODE_OF_CONDUCT.md)

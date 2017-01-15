@@ -1,7 +1,7 @@
 {
   "name": "swiftvg",
-  "version": "0.1.0",
-  "description": "Convert SVG path data to a UIBezierPath in Swift 3",
+  "version": "1.0.0",
+  "description": "Convert SVG path data to a Swift 3 UIBezierPath",
   "main": "index.js",
   "bin": "./bin/cmd.js",
   "engines": {
