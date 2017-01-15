@@ -11,7 +11,7 @@
     "build:browser": "browserify index.js -s swiftvg | uglifyjs -c > bundle.js ",
     "build:site": "browserify site/main.js -s swiftvg | uglifyjs -c > site/bundle.js ",
     "test": "npm run test:coverage && npm run test:lint",
-    "test:coverage": "nyc npm run test:unit",
+    "test:coverage": "nyc --reporter=lcov --reporter=text npm run test:unit",
     "test:lint": "standard",
     "test:unit": "mocha test.js"
   },
