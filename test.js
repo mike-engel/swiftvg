@@ -26,7 +26,7 @@ const {
   SET_RELATIVE
 } = svgToSwift
 
-describe('svg-to-swift state functions', () => {
+describe('svgswift state functions', () => {
   it('should return the state with no matching action', () => {
     const newState = reducer(initialState, '', {})
 
@@ -84,7 +84,7 @@ describe('svg-to-swift state functions', () => {
   })
 })
 
-describe('svg-to-swift helper functions', () => {
+describe('svgswift helper functions', () => {
   it('should round large numbers', () => {
     expect(roundFloat('-9.84503095e-15')).to.equal(0)
     expect(roundFloat('0.80')).to.equal(0.8)

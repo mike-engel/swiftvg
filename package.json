@@ -1,7 +1,7 @@
 {
-  "name": "svg-to-swift",
+  "name": "swiftvg",
   "version": "0.1.0",
-  "description": "Convert SVG path data to swift 3 syntax",
+  "description": "Convert SVG path data to a UIBezierPath in Swift 3",
   "main": "index.js",
   "bin": "./bin/cmd.js",
   "engines": {
@@ -21,7 +21,9 @@
     "path",
     "bezier",
     "curve",
-    "arc"
+    "arc",
+    "uibezierpath",
+    "uikit"
   ],
   "author": "Mike Engel <mike@mike-engel.com>",
   "license": "MIT",

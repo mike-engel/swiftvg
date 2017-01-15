@@ -1,10 +1,10 @@
-# svg-to-swift
+# svgswift
 
 > A small tool to help you convert your SVG code into Swift code
 
 # Installing
 
-There are two ways to use `svg-to-swift`: through the CLI or through your code.
+There are two ways to use `svgswift`: through the CLI or through your code.
 
 ## CLI
 
@@ -13,15 +13,15 @@ recommended that you install it globally, have `node_modules/.bin` in your
 path, or will use it with an npm `run-script`.
 
 ```sh
-npm install -g svg-to-swift
+npm install -g svgswift
 ```
 
 ## JS API
 
-To add `svg-to-swift` to your project, install it to your dependencies.
+To add `svgswift` to your project, install it to your dependencies.
 
 ```sh
-npm install -S svg-to-swift
+npm install -S svgswift
 ```
 
 # Usage
@@ -35,7 +35,7 @@ Unless something went wrong, the command should exit with a 0 status and print
 the swift code line by line to your terminal's STDOUT.
 
 ```sh
-svg-to-swift "M37,17 L37,17 Z"
+svgswift "M37,17 L37,17 Z"
 ```
 
 ## JS API
@@ -49,10 +49,10 @@ can imagine.
 
 ```js
 // CommonJS
-const svgToSwift = require('svg-to-swift')
+const svgToSwift = require('svgswift')
 
 // ES2015
-import svgToSwift from 'svg-to-swift'
+import svgToSwift from 'svgswift'
 
 const pathData = 'M37,17 L37,17 Z'
 
