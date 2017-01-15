@@ -2,11 +2,14 @@
 
 > Convert SVG path data to a Swift 3 UIBezierPath
 
+[![Build Status](https://travis-ci.org/mike-engel/swiftvg.svg?branch=master)](https://travis-ci.org/mike-engel/swiftvg)
+[![npm](https://img.shields.io/npm/l/swiftvg.svg)](https://npmjs.com/package/swiftvg)
+
 # Why?
 
 As an iOS developer, you have to support at least three different pixel densities. Why waste your time managing a million image assets for different resolutions and states?
 
-`svgswift` is a small little tool written in javascript to help you convert your vector SVG images into `UIBezierPath` shapes. Simply paste the string from the `d` attribute and vóila, your `UIBezierPath` code is generated for you.
+`svgswift` is a small little tool written in javascript to help you convert your vector SVG images into `UIBezierPath` shapes. It provides both CLI and JS apis, so you can use it however you'd like.
 
 # Installing
 
