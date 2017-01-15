@@ -1,3 +1,5 @@
+'use strict'
+
 const always = require('ramda/src/always')
 const append = require('ramda/src/append')
 const converge = require('ramda/src/converge')

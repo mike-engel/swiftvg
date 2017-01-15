@@ -1,30 +1,34 @@
-const svgToSwift = require('./index')
-const { expect } = require('chai')
-const { head, pipe } = require('ramda')
-const parse = require('parse-svg-path')
+'use strict'
 
-const {
-  beginShape,
-  roundFloat,
-  cgPoint,
-  convertArc,
-  convertArcXY,
-  convertCCXY,
-  convertCubicCurve,
-  convertLine,
-  convertMove,
-  convertPoints,
-  convertQCXY,
-  convertQuadraticCurve,
-  convertXY,
-  dispatch,
-  endShape,
-  initialState,
-  processPathData,
-  reducer,
-  SET_ABSOLUTE,
-  SET_RELATIVE
-} = svgToSwift
+const chai = require('chai')
+const parse = require('parse-svg-path')
+const ramda = require('ramda')
+const swiftvg = require('./index')
+
+const expect = chai.expect
+const head = ramda.head
+const pipe = ramda.pipe
+
+const beginShape = swiftvg.beginShape
+const roundFloat = swiftvg.roundFloat
+const cgPoint = swiftvg.cgPoint
+const convertArc = swiftvg.convertArc
+const convertArcXY = swiftvg.convertArcXY
+const convertCCXY = swiftvg.convertCCXY
+const convertCubicCurve = swiftvg.convertCubicCurve
+const convertLine = swiftvg.convertLine
+const convertMove = swiftvg.convertMove
+const convertPoints = swiftvg.convertPoints
+const convertQCXY = swiftvg.convertQCXY
+const convertQuadraticCurve = swiftvg.convertQuadraticCurve
+const convertXY = swiftvg.convertXY
+const dispatch = swiftvg.dispatch
+const endShape = swiftvg.endShape
+const initialState = swiftvg.initialState
+const processPathData = swiftvg.processPathData
+const reducer = swiftvg.reducer
+const SET_ABSOLUTE = swiftvg.SET_ABSOLUTE
+const SET_RELATIVE = swiftvg.SET_RELATIVE
 
 describe('svgswift state functions', () => {
   it('should return the state with no matching action', () => {
@@ -243,7 +247,7 @@ describe('Core Graphic functions', () => {
   })
 
   it('should export the full swift code from a data string', () => {
-    const points = svgToSwift('M37,17 L10,15 Z')
+    const points = swiftvg('M37,17 L10,15 Z')
 
     expect(points).to.be.an('array')
     expect(points).to.have.length(4)
