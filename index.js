@@ -190,7 +190,7 @@ const convertPoints = (a) => {
   return a.map(processPathData)
 }
 
-// svgToSwift :: String -> Array String
+// swiftvg :: String -> Array String
 module.exports = (pathData) => {
   return pipe(parse, convertPoints, prepend(beginShape()))(pathData)
 }

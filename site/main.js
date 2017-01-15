@@ -1,10 +1,16 @@
-const svgToSwift = require('../index')
+const swiftvg = require('../index')
 
 const inputEl = document.querySelector('[data-hook="input"]')
 const outputEl = document.querySelector('[data-hook="output"]')
 
 const updateOutput = (evt) => {
-  outputEl.innerText = svgToSwift(evt.target.value).join('\n')
+  const data = evt.target.value
+
+  if (data) {
+    outputEl.innerText = swiftvg(evt.target.value).join('\n')
+  } else {
+    outputEl.innerText = ''
+  }
 }
 
 inputEl.addEventListener('input', updateOutput)

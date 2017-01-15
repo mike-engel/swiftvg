@@ -4,7 +4,7 @@ const pathData = process.argv[2]
 const parser = require('../index')
 
 if (process.argv.length > 3) {
-  console.error('You passed too many arguments to svgswift!')
+  console.error('You passed too many arguments to swiftvg!')
   console.error('Make sure your SVG path is quoted.')
 
   process.exit(1)

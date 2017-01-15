@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="svgswift — Convert SVG path data to swift 3 syntax">
-  <title>swiftvg &ndash; Convert SVG path data to swift 3</title>
+  <meta name="description" content="swiftvg — Convert SVG path data to swift 3 syntax">
+  <title>swiftvg &ndash; Convert SVG path data to a Swift 3 UIBezierPath</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -17,11 +17,12 @@
     }
 
     body {
-      background-color: #055c95;
-      color: #b6f9a8;
+      background-color: #FFF;
+      color: #000;
       font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
       font-size: 16px;
       line-height: 1.4;
+      padding-top: 1px;
     }
 
     main {
@@ -30,15 +31,12 @@
     }
 
     code {
-      background-color: #C0D6E4;
       border-radius: 3px;
-      color: #055c95;
       font-weight: 600;
-      padding: 2px 5px;
     }
 
     a {
-      color: #b6f9a8;
+      color: #000;
     }
 
     p {
@@ -52,14 +50,14 @@
 
     a:hover,
     a:active {
-      color: #b6f9a8;
+      color: #000;
     }
 
     .h1,
     .h2,
     .h3 {
       line-height: 1.1;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.03em;
       margin: 0 0 1em; 0;
     }
 
@@ -69,7 +67,7 @@
     }
 
     .h1 {
-      border-top: 6px solid #b6f9a8;
+      border-top: 6px solid #000;
       font-size: 3rem;
       padding: 0.4em 0 0 0;
     }
@@ -93,7 +91,7 @@
     }
 
     svg {
-      fill: #b6f9a8;
+      fill: #000;
     }
 
     .io {
@@ -102,24 +100,22 @@
 
     .input,
     .output {
-      border: none;
+      border: 1px solid #000;
       border-radius: 3px;
-      color: #055c95;
+      color: #000;
       display: block;
       font-family: monospace;
       font-size: 1rem;
+      font-weight: 600;
       height: 50vh;
+      line-height: 1.4;
       max-height: 300px;
-      padding: 0.5em;
+      padding: 0.5em 0.9em;;
       width: 100%;
     }
 
-    .input {
-      background-color: #C0D6E4;
-    }
-
     .output {
-      border: 1px solid #b6f9a8;
+      background-color: #FAFAFA;
       overflow: scroll;
       white-space: pre;
     }
@@ -140,6 +136,11 @@
       .text {
         margin-right: 19px;
       }
+
+      .input,
+      .output {
+        height: 30vh;
+      }
     }
   </style>
 </head>
@@ -151,18 +152,32 @@
       </svg>
     </h1>
     <section class="text">
-      <h2 class="h3">Convert SVG path data to swift 3 syntax</h2>
+      <h2 class="h3">Convert SVG path data to a Swift 3 UIBezierPath</h2>
       <p>As an iOS developer, you have to support at least three different pixel densities. Why waste your time managing a million image assets for different resolutions and states?</p>
-      <p><code>svgswift</code> is a small little tool written in javascript to help you convert your vector SVG images into <code>UIBezierPath</code> shapes. Simply paste the string from the <code>d</code> attribute and vóila, your <code>UIBezierPath</code> code is generated for you.</p>
-      <p>The code is also open source on <a href="https://github.com/mike-engel/swiftvg">Github</a>. Check it out, maybe.
+      <p><code>swiftvg</code> is a small little tool written in javascript to help you convert your vector SVG images into <code>UIBezierPath</code> shapes. Simply paste the string from the <code>d</code> attribute and vóila, your <code>UIBezierPath</code> code is generated for you.</p>
+      <p>The code is open source (MIT) on <a href="https://github.com/mike-engel/swiftvg">Github</a>. Check it out, maybe.
     </section>
     <section class="io">
-      <textarea class="input" data-hook="input" placeholder="Your `d` attribute string goes here."></textarea>
-      <pre class="output" data-hook="output">&nbsp;</pre>
+      <textarea class="input" data-hook="input" placeholder="Your `d` attribute string goes here.">M10,6 L10,0 L6,0 L6,6 L0,6 L0,10 L6,10 L6,16 L10,16 L10,10 L16,10 L16,6 L10,6 Z</textarea>
+      <pre class="output" data-hook="output">let shape = UIBezierPath()
+shape.move(to: CGPoint(x: 10, y: 6))
+shape.addLine(to: CGPoint(x: 10, y: 0))
+shape.addLine(to: CGPoint(x: 6, y: 0))
+shape.addLine(to: CGPoint(x: 6, y: 6))
+shape.addLine(to: CGPoint(x: 0, y: 6))
+shape.addLine(to: CGPoint(x: 0, y: 10))
+shape.addLine(to: CGPoint(x: 6, y: 10))
+shape.addLine(to: CGPoint(x: 6, y: 16))
+shape.addLine(to: CGPoint(x: 10, y: 16))
+shape.addLine(to: CGPoint(x: 10, y: 10))
+shape.addLine(to: CGPoint(x: 16, y: 10))
+shape.addLine(to: CGPoint(x: 16, y: 6))
+shape.addLine(to: CGPoint(x: 10, y: 6))
+shape.close()</pre>
     </section>
     <footer>
       <span>&copy; 2017 Mike Engel</span>
-      <span><a href="https://github.com/mike-engel/svgswift/tree/master/LICENSE.md" target="_blank">MIT</a></span>
+      <span><a href="https://github.com/mike-engel/swiftvg/tree/master/LICENSE.md" target="_blank">MIT</a></span>
     </footer>
   </main>
   <script src="site/bundle.js"></script>

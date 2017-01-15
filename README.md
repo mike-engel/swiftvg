@@ -1,4 +1,4 @@
-# svgswift
+# swiftvg
 
 > Convert SVG path data to a Swift 3 UIBezierPath
 
@@ -9,11 +9,11 @@
 
 As an iOS developer, you have to support at least three different pixel densities. Why waste your time managing a million image assets for different resolutions and states?
 
-`svgswift` is a small little tool written in javascript to help you convert your vector SVG images into `UIBezierPath` shapes. It provides both CLI and JS apis, so you can use it however you'd like.
+`swiftvg` is a small little tool written in javascript to help you convert your vector SVG images into `UIBezierPath` shapes. It provides both CLI and JS apis, so you can use it however you'd like.
 
 # Installing
 
-There are two ways to use `svgswift`: through the CLI or through your code.
+There are two ways to use `swiftvg`: through the CLI or through your code.
 
 ## CLI
 
@@ -22,15 +22,15 @@ recommended that you install it globally, have `node_modules/.bin` in your
 path, or use it with an npm `run-script`.
 
 ```sh
-npm install -g svgswift
+npm install -g swiftvg
 ```
 
 ## JS API
 
-To add `svgswift` to your project, install it to your dependencies.
+To add `swiftvg` to your project, install it to your dependencies.
 
 ```sh
-npm install -S svgswift
+npm install -S swiftvg
 ```
 
 # Usage
@@ -44,7 +44,7 @@ Unless something went wrong, the command should exit with a 0 status and print
 the swift code line by line to your terminal's STDOUT.
 
 ```sh
-svgswift "M37,17 L37,25 Z"
+swiftvg "M37,17 L37,25 Z"
 
 # output
 let shape = UIBezierPath()
@@ -64,14 +64,14 @@ can imagine.
 
 ```js
 // CommonJS
-const svgToSwift = require('svgswift')
+const swiftvg = require('swiftvg')
 
 // ES2015
-import svgToSwift from 'svgswift'
+import swiftvg from 'swiftvg'
 
 const pathData = 'M37,17 L37,25 Z'
 
-svgToSwift(pathData) // Array<String>
+swiftvg(pathData) // Array<String>
 ```
 
 # Contributing

@@ -30,7 +30,7 @@ const reducer = swiftvg.reducer
 const SET_ABSOLUTE = swiftvg.SET_ABSOLUTE
 const SET_RELATIVE = swiftvg.SET_RELATIVE
 
-describe('svgswift state functions', () => {
+describe('swiftvg state functions', () => {
   it('should return the state with no matching action', () => {
     const newState = reducer(initialState, '', {})
 
@@ -88,7 +88,7 @@ describe('svgswift state functions', () => {
   })
 })
 
-describe('svgswift helper functions', () => {
+describe('swiftvg helper functions', () => {
   it('should round large numbers', () => {
     expect(roundFloat('-9.84503095e-15')).to.equal(0)
     expect(roundFloat('0.80')).to.equal(0.8)
