@@ -35,7 +35,7 @@
     "browserify": "^14.1.0",
     "chai": "^4.0.1",
     "mocha": "^3.2.0",
-    "nyc": "^10.0.0",
+    "nyc": "^11.0.2",
     "standard": "^10.0.0",
     "uglify-js": "github:mishoo/UglifyJS2#harmony"
   },
