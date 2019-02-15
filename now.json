@@ -1,5 +1,9 @@
 {
+  "version": 2,
   "alias": ["swiftvg.mike-engel.com"],
   "name": "swiftvg",
-  "type": "static"
+  "builds": [
+    { "src": "*.html", "use": "@now/static" },
+    { "src": "site/*.js", "use": "@now/static" }
+  ]
 }
