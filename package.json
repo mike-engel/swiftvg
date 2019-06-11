@@ -8,8 +8,9 @@
     "node": ">= 4.0.0"
   },
   "scripts": {
-    "build:browser": "browserify index.js -s swiftvg | uglifyjs -c > bundle.js ",
-    "build:site": "browserify site/main.js -s swiftvg | uglifyjs -c > site/bundle.js ",
+    "build": "npm run build:browser && npm run build:site",
+    "build:browser": "browserify index.js -s swiftvg | terser -c > bundle.js ",
+    "build:site": "browserify site/main.js -s swiftvg | terser -c > site/bundle.js ",
     "test": "npm run test:coverage && npm run test:lint",
     "test:coverage": "nyc --reporter=lcov --reporter=text npm run test:unit",
     "test:lint": "standard",
@@ -30,14 +31,13 @@
   "dependencies": {
     "parse-svg-path": "^0.1.2",
     "ramda": "^0.26.1",
-    "uglify-es": "github:mishoo/UglifyJS2#harmony",
-    "uglify-js": "^3.4.9"
+    "terser": "^4.0.0"
   },
   "devDependencies": {
     "browserify": "^16.2.3",
     "chai": "^4.0.1",
-    "mocha": "^6.0.0",
-    "nyc": "^14.0.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
     "standard": "^12.0.1"
   },
   "standard": {
