@@ -1,9 +1,9 @@
 {
-  "version": 2,
-  "alias": ["swiftvg.mike-engel.com"],
-  "name": "swiftvg",
-  "builds": [
-    { "src": "*.html", "use": "@now/static" },
-    { "src": "site/*.js", "use": "@now/static" }
-  ]
+	"version": 2,
+	"alias": ["swiftvg.mike-engel.com"],
+	"name": "swiftvg",
+	"builds": [
+		{ "src": "*.html", "use": "@now/static" },
+		{ "src": "site/*.js", "use": "@now/static" }
+	]
 }

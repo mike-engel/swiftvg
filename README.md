@@ -65,14 +65,14 @@ can imagine.
 
 ```js
 // CommonJS
-const swiftvg = require('swiftvg')
+const swiftvg = require("swiftvg");
 
 // ES2015
-import swiftvg from 'swiftvg'
+import swiftvg from "swiftvg";
 
-const pathData = 'M37,17 L37,25 Z'
+const pathData = "M37,17 L37,25 Z";
 
-swiftvg(pathData) // Array<String>
+swiftvg(pathData); // Array<String>
 ```
 
 # Contributing
