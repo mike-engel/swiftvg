@@ -1,8 +1,0 @@
-os:
-  - linux
-language: node_js
-node_js:
-  - node
-script: npm test
-after_success:
-  - bash <(curl -s https://codecov.io/bash)

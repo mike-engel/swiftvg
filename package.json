@@ -11,9 +11,8 @@
     "build": "npm run build:browser && npm run build:site",
     "build:browser": "browserify index.js -s swiftvg | terser -c > bundle.js ",
     "build:site": "browserify site/main.js -s swiftvg | terser -c > site/bundle.js ",
-    "test": "npm run test:coverage && npm run test:lint",
+    "test": "npm run test:coverage",
     "test:coverage": "nyc --reporter=lcov --reporter=text npm run test:unit",
-    "test:lint": "standard",
     "test:unit": "mocha test.js"
   },
   "keywords": [
@@ -36,23 +35,30 @@
   "devDependencies": {
     "browserify": "^16.3.0",
     "chai": "^4.0.1",
+    "lint-staged": "^9.2.3",
+    "husky": "^3.0.4",
     "mocha": "^6.1.4",
     "nyc": "^14.1.1",
-    "standard": "^14.0.0"
+    "prettier": "^1.18.2"
   },
-  "standard": {
-    "ignore": [
-      "bundle.js"
-    ],
-    "globals": [
-      "describe",
-      "it"
+  "prettier": {
+    "useTabs": true
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,md,json}": [
+      "prettier --write",
+      "git add"
     ]
   },
   "nyc": {
-    "lines": 99,
-    "statements": 99,
-    "functions": 99,
-    "branches": 99
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100
   }
 }
