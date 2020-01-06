@@ -30,7 +30,7 @@
   "dependencies": {
     "parse-svg-path": "^0.1.2",
     "ramda": "^0.26.1",
-    "terser": "^4.2.1"
+    "terser": "^4.6.1"
   },
   "devDependencies": {
     "browserify": "^16.5.0",
