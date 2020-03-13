@@ -123,6 +123,7 @@
 			  background-color: #FAFAFA;
 			  overflow: scroll;
 			  white-space: pre;
+			  margin-top: 1em;
 			}
 
 			@media (min-width: 768px) {
@@ -194,7 +195,11 @@
 				>
 M10,6 L10,0 L6,0 L6,6 L0,6 L0,10 L6,10 L6,16 L10,16 L10,10 L16,10 L16,6 L10,6 Z</textarea
 				>
-				<pre class="output" data-hook="output">
+				<textarea
+					class="output"
+					data-hook="output"
+					readonly
+				>
 let shape = UIBezierPath()
 shape.move(to: CGPoint(x: 10, y: 6))
 shape.addLine(to: CGPoint(x: 10, y: 0))
@@ -209,7 +214,7 @@ shape.addLine(to: CGPoint(x: 10, y: 10))
 shape.addLine(to: CGPoint(x: 16, y: 10))
 shape.addLine(to: CGPoint(x: 16, y: 6))
 shape.addLine(to: CGPoint(x: 10, y: 6))
-shape.close()</pre
+shape.close()</textarea
 				>
 			</section>
 			<footer>
