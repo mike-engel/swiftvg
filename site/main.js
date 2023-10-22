@@ -7,9 +7,9 @@ const updateOutput = evt => {
 	const data = evt.target.value;
 
 	if (data) {
-		outputEl.innerText = swiftvg(evt.target.value).join("\n");
+		outputEl.value = swiftvg(evt.target.value).join("\n");
 	} else {
-		outputEl.innerText = "";
+		outputEl.value = "";
 	}
 };
 
